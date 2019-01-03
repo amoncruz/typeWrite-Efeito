@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: black;
+      }
+      p {
+        color: white;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Efeito maquina de escrever</p>
+    <script>
+      function typeWrite(elemento) {
+        var arrayTexto = elemento.innerHTML.split("");
+        elemento.innerHTML = "";
+        arrayTexto.forEach((letra, i) => {
+          setTimeout(() => {
+            elemento.innerHTML += letra;
+          }, 75 * i);
+        });
+      }
+
+      var elemento = document.querySelector("p");
+      typeWrite(elemento);
+    </script>
+  </body>
+</html>
